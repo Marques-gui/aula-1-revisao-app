@@ -6,41 +6,22 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-n1='';
-n2='';
-res=0;
+/*- Cada KM rodado custa R$3,50 (o usuário digita quantos km foram rodados)*/
+km='';
+ValorBruto=0;
+ValorDoMotorista=0;
+ValorDoAPP=0;
 
 constructor(private alertController: AlertController) {}
-
-async AlertaDivisaoPor0() {
-  const alert = await this.alertController.create({
-    header: 'Opss... ',
-    subHeader: '',
-    message: 'Não é possivel fazer divisões por 0',
-    buttons: ['OK'],
-  });
-
-  await alert.present();
-}
-somar() {
-  this.res=parseFloat(this.n1)+parseFloat(this.n2);
-}
-subtrair() {
-  this.res=parseFloat(this.n1)-parseFloat(this.n2);
-}
-dividir() {
-  if (parseFloat(this.n2)==0){
-    this.res=0;
-    this.AlertaDivisaoPor0();
+Calculo(){
+this.ValorBruto=parseFloat(this.km)* 3.5
+  if ((this.ValorBruto)>=150){
+    this.ValorDoMotorista=(this.ValorBruto) *0.8
+    this.ValorDoAPP=(this.ValorBruto)*0.2
   }
   else{
-    this.res=parseFloat(this.n1)/parseFloat(this.n2);
+    this.ValorDoMotorista=(this.ValorBruto)*0.75
+    this.ValorDoAPP=(this.ValorBruto)*0.25
   }
-  this.res=parseFloat(this.n1)/parseFloat(this.n2);
 }
-multiplicar() {
-  this.res=parseFloat(this.n1)*parseFloat(this.n2);
-}
-
 }

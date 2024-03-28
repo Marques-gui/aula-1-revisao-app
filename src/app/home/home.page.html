@@ -9,24 +9,17 @@
 <ion-content [fullscreen]="true">
   <ion-item>
     <ion-input
-    [(ngModel)]="n1"
-    label="Primeiro numero"
+    [(ngModel)]="km"
+    label="Quilometros"
     labelPlacement="floating"
-    placeholder="Digite o primeiro valor"></ion-input>
+    placeholder="Digite a quantidade de quilometros na corrida"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-input
-      [(ngModel)]="n2"
-      label="Segundo numero"
-      labelPlacement="floating"
-      placeholder="Digite o segundo valor"></ion-input>
-      </ion-item>
-
-      <ion-button fill="outline" (click)="somar()">Somar</ion-button>
-      <ion-button fill="outline" (click)="subtrair()">Subtrair</ion-button>
-      <ion-button fill="outline" (click)="multiplicar()">Multiplicar</ion-button>
-      <ion-button fill="outline" (click)="dividir()">Dividir</ion-button>
+      <ion-button fill="outline" (click)="Calculo()">Calcular</ion-button>
       <br>
-      <ion-label>{{res}}</ion-label>
+      Valor Total: R$ <ion-label>{{ValorBruto}}</ion-label>
+      <br>
+      Valor recebido pelo motorista:R$ <ion-label>{{ValorDoMotorista}}</ion-label>
+      <br>
+      Valor recebido pelo aplicativo:R$ <ion-label>{{ValorDoAPP}}</ion-label>
 </ion-content>
